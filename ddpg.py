@@ -117,8 +117,8 @@ def ddpg(agent, env, args):
 def parse_args():
 
     parser = argparse.ArgumentParser(description='Train agent with DDPG')
-    parser.add_argument('-env', type=str, default='Pendulum-v0', help='training environment')
-    parser.add_argument('--num_episodes', type=int, default=1000,
+    parser.add_argument('--env', type=str, default='Pendulum-v0', help='training environment')
+    parser.add_argument('--num_episodes', type=int, default=500,
                         help='number of episodes for training')
     parser.add_argument('--max_episode_steps', type=int, default=250,
                         help='maximum steps per episode')
@@ -148,7 +148,6 @@ def parse_args():
     parser.add_argument('--warmup_steps', type=int, default=1000,
         help='warmup length, in steps')
     parser.add_argument('--render', type=int, default=0)
-    parser.add_argument('--env', type=str)
     return parser.parse_args()
 
 

@@ -27,7 +27,7 @@ class MountaincarCritic(nn.Module):
         self.fc3 = nn.Linear(256, 128)
         self.out = nn.Linear(128, 1)
     
-    def forward(self, state):
+    def forward(self, state, action):
         x = F.relu(self.fc1(state))
         x = F.relu(self.fc2(torch.cat((x, action), dim=1)))
         x = F.relu(self.fc3(x))
